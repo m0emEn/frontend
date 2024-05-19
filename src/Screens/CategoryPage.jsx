@@ -6,12 +6,12 @@ import { getProducts } from "../redux/actions/productsActions";
 import { useDispatch, useSelector } from "react-redux";
 
 const CategoryProduct = () => {
-  const { category } = useParams();
-  const [filter, setFilter] = useState("popularity");
-  const [filteredProducts, setFilteredProducts] = useState([]);
   const dispatch = useDispatch();
   const { products } = useSelector((state) => state.product);
   const productData = products;
+  const { category } = useParams();
+  const [filter, setFilter] = useState("popularity");
+  const [filteredProducts, setFilteredProducts] = useState([]);
   let x = [];
   useEffect(() => {
     dispatch(getProducts());
